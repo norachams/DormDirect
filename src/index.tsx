@@ -4,10 +4,10 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import App from './App';
 import './styles/tailwind.css';
 
-// Create a root element
+
 const rootElement = document.getElementById('root');
 
-// Ensure the root element is not null before creating the root
+
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(

@@ -1,0 +1,161 @@
+/* src/styles/Home.css */
+.container2 {
+     display: flex;
+     justify-content: space-between; /* Aligns left and right sections */
+     height: 100vh auto; /* Use full viewport height */
+     overflow-y: auto; /* Enable vertical scrolling */
+     text-align: center;
+     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+   }
+   
+   .left-section,
+   .right-section {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 50%; /* Adjust width as needed */
+     padding: 20px;
+     justify-content: center;
+   }
+   
+   /* Top group styling */
+   .top-group {
+     padding: 20px; /* Add some padding inside the text group */
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     align-items: flex-start; /* Align text to the left */
+     width: 90%; /* Ensure the top-group takes full width */
+   }
+   
+   /* Bottom group styling */
+   .bottom-group {
+     margin-top: 10px;
+     background-color: #E7C873;
+     padding: 20px; /* Add some padding inside the text group */
+     border-radius: 20px;
+     display: flex;
+     justify-content: space-between;
+     width: auto;
+     align-items: center; /* Center text horizontally */
+     gap: 20px;
+   }
+   
+   /* Group styles */
+   .left-group,
+   .right-group {
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 10px;
+   }
+   
+   #page-2-title {
+     font-size: 2rem;
+     font-weight: 600;
+   }
+   
+   /* Section styling */
+   .small-section {
+     display: flex;
+     align-items: center; /* Align items vertically centered */
+     gap: 10px; /* Space between icon and text */
+   }
+   
+   #sub-text {
+     font-size: 14px;
+   }
+   
+   /* Button styling */
+   .learn-more-button {
+     background-color: #E7C873;
+     border: none;
+     padding: 10px 20px; /* Adjust padding */
+     font-size: 15px;
+     display: flex;
+     gap: 10px;
+     border-radius: 10px;
+     align-items: center;
+     cursor: pointer;
+     margin-top: 30px;
+   }
+   
+   .learn-more-button:hover {
+     opacity: 0.8;
+   }
+   
+   #small-text {
+     font-size: 13px;
+   }
+   
+   /* Responsive Styles */
+   
+   /* Tablets and smaller screens */
+   @media screen and (max-width: 834px) {
+     .container2 {
+       flex-direction: column; /* Stack sections vertically on smaller screens */
+     }
+   
+     .left-section,
+     .right-section {
+       width: 100%; /* Full width on smaller screens */
+       padding: 10px; /* Reduce padding for smaller screens */
+     }
+   
+     #campus-picture {
+       width: clamp(200px, 20vw, 300px); /* Adjust width for smaller screens */
+     }
+   }
+   
+   /* Phones */
+   @media screen and (max-width: 738px) {
+     .left-group,
+     .right-group {
+       font-size: clamp(12px, 2vw, 16px); /* Adjust font size for smaller screens */
+     }
+   
+     #page-2-title {
+       font-size: clamp(1.5rem, 4vw, 2rem); /* Adjust font size for smaller screens */
+     }
+   
+     .learn-more-button {
+       padding: 10px; /* Reduce padding for smaller screens */
+       font-size: 14px; /* Reduce font size for smaller screens */
+     }
+   }
+
+   
+   @media screen and (max-width: 420px) {
+     .small-text {
+          text-align: left;
+     }
+     .bottom-group {
+          display: flex;
+          flex-direction: column;
+     }
+
+     #page-2-title {
+       font-size: clamp(1rem, 4vw, 1.5rem); /* Adjust font size for smaller screens */
+     }
+
+     #sub-text {
+       font-size: clamp(0.5rem, 4vw, 0.7rem); /* Adjust font size for smaller screens */
+     }
+     .learn-more-button {
+       padding: 10px; /* Reduce padding for smaller screens */
+       font-size: 14px; /* Reduce font size for smaller screens */
+     }
+   }
+
+   @media screen and (max-width: 323px) {
+     .bottom-group {
+          display: flex;
+          flex-direction: column;
+     }
+     .small-text {
+          text-align: left;
+     }
+     
+   }
+   

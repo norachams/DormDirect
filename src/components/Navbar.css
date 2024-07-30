@@ -1,0 +1,97 @@
+/* src/styles/Navbar.css */
+nav {
+     position: fixed; /* Fix the navbar at the top */
+     top: 0;
+     width: 100%; /* Full width */
+     background-color: white;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+     display: flex;
+     justify-content: space-between; /* Space out the logo/title and nav items */
+     align-items: center;
+     padding: 0 20px; /* Padding on left and right */
+     height: 60px; /* Fixed height */
+     z-index: 1000; /* Ensure it stays above other content */
+     margin-top: 20px;
+     border-radius: 30px;
+   }
+   
+   .navbar-left {
+     display: flex;
+     align-items: center;
+   }
+   
+   #logo-navbar {
+     width: 300px; /* Adjust size as needed */
+   }
+   
+   .title {
+     font-size: 1.75rem;
+     font-weight: bold;
+     color: black;
+     margin: 0;
+   }
+   
+   ul {
+     display: flex;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+   }
+   
+   ul li {
+     margin: 0 10px;
+     list-style: none;
+     flex-direction: row;
+   }
+   
+   ul li a  {
+     text-decoration: none;
+     color: black;
+     font-size: 1.2rem;
+     font-weight: bold;
+     padding: 5px 10px;
+     border-radius: 5px;
+   }
+   
+   ul li a:hover, ul li a.active {
+     background-color: rgb(251, 153, 115);
+     color: white;
+   }
+   
+/* Navbar styles for screens with a maximum width of 464px */
+@media screen and (max-width: 464px) {
+     nav {
+       display: flex;
+       flex-direction: column;
+       align-items: center; /* Center items horizontally */
+       padding: 10px; /* Add padding to avoid content touching edges */
+       box-sizing: border-box; /* Include padding in the width */
+       height: auto; /* Adjust height to fit content */
+     }
+   
+     #logo-navbar {
+          display: none;
+     }
+   
+     ul {
+       display: flex;
+       flex-direction: column; /* Stack nav items vertically */
+       width: 100%; /* Full width */
+       padding: 0; /* Remove padding */
+       margin: 0; /* Remove margin */
+       align-items: center; /* Center-align nav items */
+     }
+   
+     ul li {
+       width: 100%; /* Full width for nav items */
+       text-align: center; /* Center-align text */
+       margin: 5px 0; /* Space between items */
+     }
+   
+     ul li a {
+       display: block; /* Ensure links are block-level for better spacing */
+       padding: 10px; /* Add padding for touch targets */
+       font-size: 1rem; /* Adjust font size for readability */
+     }
+   }
+   

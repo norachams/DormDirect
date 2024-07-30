@@ -1,0 +1,167 @@
+/* src/styles/HomeBlock3.css */
+.container3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  background-image: url('../images/HomePageBackground2.png'); /* Set the background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Avoid repeating the background image */
+  height: 100vh; /* Use full viewport height */
+  overflow: hidden; /* Hide any overflow */
+  text-align: center;
+  position: relative; /* Position relative to stack content on top */
+}
+
+/* Header styling */
+.container-3-header {
+  font-size: 3.5rem;
+}
+
+/* Center content styling */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+  margin-bottom: 40px; /* Space between the center content and section block */
+}
+
+/* Section block styling */
+.section-block {
+  display: flex;
+  justify-content: center; /* Center the blocks horizontally */
+  gap: 20px; /* Add space between the blocks */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Individual block styling */
+.block-1 {
+  display: flex;
+  margin: 20px; /* Adjust margin as needed */
+  max-width: 300px;
+  flex-direction: column; /* Ensure vertical stacking inside each block */
+}
+
+.block-2 {
+  display: flex;
+  margin: 20px; /* Adjust margin as needed */
+  max-width: 300px;
+  flex-direction: column; /* Ensure vertical stacking inside each block */
+}
+
+/* Vertical block styling */
+.vertical-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally inside the block */
+  text-align: center; /* Center text inside the block */
+  padding: 20px;
+}
+
+/* Heading inside the block */
+.vertical-block h5 {
+  margin-bottom: 10px; /* Space between heading and text */
+}
+
+/* Circle icon styling */
+.circle-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Set the width of the circle */
+  height: 60px; /* Set the height of the circle */
+  background-color: #E7C873; /* Set the background color of the circle */
+  border-radius: 50%; /* Make it a circle */
+  margin-bottom: 10px; /* Space between the icon and the heading */
+  border: none; /* Optional: Add a border around the circle */
+}
+
+/* Icon inside the circle */
+.circle-icon #icon {
+  width: 30px; /* Adjust icon size */
+  height: 30px; /* Adjust icon size */
+}
+
+/* Heading text */
+#heading-text {
+  font-size: 1.4rem;
+}
+
+/* Text styling */
+#how-it-works-text {
+  line-height: 25px;
+}
+
+/* Responsive Styles */
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1075px) {
+  .block-2 {
+    color: white;
+  }
+
+  .container3 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1059px) {
+  .container-3-header {
+    margin-top: 40px;
+    font-size: 2rem; /* Reduce font size for medium screens */
+    font-weight: 600;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+  .container-3-header {
+    font-size: 1.5rem; /* Reduce font size for medium screens */
+  }
+
+  .block-1 {
+    max-width: 250px; /* Adjust max-width for smaller screens */
+  }
+  
+  .vertical-block {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+  
+  .circle-icon {
+    width: 50px; /* Reduce size of circle */
+    height: 50px; /* Reduce size of circle */
+  }
+  
+  .circle-icon #icon {
+    width: 25px; /* Reduce icon size */
+    height: 25px; /* Reduce icon size */
+  }
+}
+
+/* Small screens (phones) */
+@media screen and (max-width: 618px) {
+  .container-3-header {
+    font-size: 1.5rem; /* Further reduce font size for small screens */
+  }
+
+  .block-1 {
+    max-width: 100%; /* Full width on small screens */
+    font-size: 0.8rem; /* Further reduce font size for small screens */
+  }
+
+  .vertical-block {
+    padding: 10px; /* Further reduce padding for small screens */
+  }
+  
+  .circle-icon {
+    width: 40px; /* Further reduce size of circle */
+    height: 40px; /* Further reduce size of circle */
+  }
+  
+  .circle-icon #icon {
+    width: 20px; /* Further reduce icon size */
+    height: 20px; /* Further reduce icon size */
+  }
+}

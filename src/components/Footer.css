@@ -1,0 +1,81 @@
+/* src/styles/Footer.css */
+.main-footer {
+     background-color: #E7C873;
+     color: black; /* Text color */
+     padding: 10px 0; /* Reduced top and bottom padding */
+     width: 100%; /* Full width */
+     display: flex;
+     justify-content: center;
+   }
+   
+   .footer-container {
+     display: flex;
+     justify-content: space-between; /* Space out columns */
+     width: 80%; /* Adjust width as needed */
+     max-width: 1200px; /* Optional: max width for the container */
+     flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+     align-items: center; /* Center columns vertically */
+     padding: 0;
+     margin: 0;
+     height: 100px;
+   }
+   
+   .col {
+     flex: 1; /* Allow columns to grow and fill space */
+     margin: 5px; /* Reduced margin between columns */
+     min-width: 150px; /* Minimum width to ensure columns don't get too small */
+     display: flex;
+     flex-direction: column;
+     align-items: center; /* Center content horizontally */
+   }
+   
+   h4 {
+     margin-bottom: 5px; /* Reduced space between heading and list */
+     font-size: 1rem; /* Reduced font size */
+   }
+   
+   .list-unstyled {
+     list-style-type: none; /* Remove bullet points */
+     padding: 0; /* Remove default padding */
+     text-align: center; /* Center text */
+     display: flex;
+     flex-direction: column;
+   }
+   
+   li {
+     margin-bottom: 3px; /* Reduced space between list items */
+     font-size: 0.8rem; /* Reduced font size */
+   }
+
+   #newsletter-item span {
+     text-decoration: underline;
+   }
+   
+   #header-title {
+     font-size: 1rem; /* Reduced font size */
+   }
+   
+   #link {
+     text-decoration: none;
+     color: black;
+   }
+   
+   #logo-icon {
+     width: 250px; /* Reduced logo size */
+     display: block;
+   }
+   
+   @media screen and (max-width: 1075px) {
+     .footer-container {
+          display: flex;
+          flex-direction: column; /* Stack columns vertically */
+          align-items: center; /* Center-align content */
+          height: auto; /* Adjust height to fit content */
+     }
+   
+     .col {
+          width: 100%; /* Full width for each column */
+          text-align: center; /* Center text within columns */
+          margin: 10px 0; /* Space between columns */
+     }
+   }
