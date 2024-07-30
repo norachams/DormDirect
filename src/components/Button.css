@@ -1,0 +1,30 @@
+.big-container {
+     width: 10%;
+}
+
+.parent-button {
+     background-color: white;
+     border: none;
+     border-radius: 50px;
+     justify-content: space-between;
+}
+
+.button-container {
+     display: flex;
+     align-items: center;
+     padding: 10px;
+     border: none;
+     border-radius: 50px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     background-color: white;
+}
+
+#icon {
+     font-size: 1.5rem;
+}
+
+#button-paragraph-text {
+     background-color: white;
+     margin-left: 10px;
+}
