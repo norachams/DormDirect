@@ -1,14 +1,26 @@
 import React from 'react';
+
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Home, About, Login } from './components/pages'
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Pages/login';
+
+import './styles/tailwind.css'; // Add this line
+
+
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
+
