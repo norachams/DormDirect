@@ -79,3 +79,13 @@
           margin: 10px 0; /* Space between columns */
      }
    }
+
+   @media screen and (max-width: 300px) {
+      .footer-container {
+        width: auto;
+      }
+
+      #logo-icon {
+        width: clamp(150px, 1vw, 250px)
+      }
+   }

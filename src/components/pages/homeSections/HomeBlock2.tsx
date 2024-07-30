@@ -4,6 +4,7 @@ import "./styles/HomeBlock2.css";
 import campusStudents from "./images/campusStudents.png"
 import { MdArrowRightAlt } from "react-icons/md";
 import CheckMarkItem from '../../CheckMarkItem';
+import { NavLink } from 'react-router-dom';
 
 export const HomeBlock2: React.FC = () => {
      return (
@@ -17,9 +18,6 @@ export const HomeBlock2: React.FC = () => {
                          <p id='sub-text'>In a Saturated Housing Market - Choose Us for the Best Student Rentals</p>
                     </div>
                     <div className='bottom-group'>
-
-
-                         
                          <div className='left-group'>
                               <CheckMarkItem text='100% Secure and Student Verified' />
                               <CheckMarkItem text='Rent or Sublease Room' />
@@ -29,10 +27,12 @@ export const HomeBlock2: React.FC = () => {
                               <CheckMarkItem text='Trusted By Students and Landlords' />
                          </div>
                     </div>
-                    <button className='learn-more-button'>
-                         <span>Learn More</span>
-                         <MdArrowRightAlt />
-                    </button>
+                    <NavLink to={"/about"}>
+                         <button className='learn-more-button'>
+                              <p>Learn More</p>
+                              <MdArrowRightAlt />
+                         </button>
+                    </NavLink>
                </div>
           </div>
      );
