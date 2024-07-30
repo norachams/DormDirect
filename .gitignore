@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 .serviceAccountKey.json
 serviceAccountKey.json
-.firebase.ts
+.firebaseConfig.ts
+firebaseConfig.ts

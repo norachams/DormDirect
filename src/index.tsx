@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import {Footer} from './Pages/footer';
-import reportWebVitals from './reportWebVitals';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import App from './App';
+import './styles/tailwind.css';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <Footer />
-  </React.StrictMode>
-);
+// Create a root element
+const rootElement = document.getElementById('root');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Ensure the root element is not null before creating the root
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <GoogleOAuthProvider clientId="878123970204-0r6kos3uuj6u6m4edfctjq47j3iqnqta.apps.googleusercontent.com">
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </GoogleOAuthProvider>
+  );
+} else {
+  console.error('Failed to find the root element');
+}
