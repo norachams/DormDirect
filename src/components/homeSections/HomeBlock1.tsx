@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaHouseUser } from "react-icons/fa";
 import { MdApartment } from "react-icons/md";
 import { GiFamilyHouse } from "react-icons/gi";
-import Button from '../../Button';
+import Button from '../Button';
 import "./styles/HomeBlock1.css";
 
 export const HomeBlock1: React.FC = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoCheckmarkDone } from "react-icons/io5";
-import "./pages/homeSections/styles/HomeBlock3.css"
+import "./homeSections/styles/HomeBlock3.css"
 
 // Define the props type
 interface BlockItemProps {

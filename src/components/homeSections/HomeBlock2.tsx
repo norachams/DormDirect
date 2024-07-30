@@ -3,7 +3,7 @@ import React from 'react';
 import "./styles/HomeBlock2.css";
 import campusStudents from "./images/campusStudents.png"
 import { MdArrowRightAlt } from "react-icons/md";
-import CheckMarkItem from '../../CheckMarkItem';
+import CheckMarkItem from '../CheckMarkItem';
 import { NavLink } from 'react-router-dom';
 
 export const HomeBlock2: React.FC = () => {

@@ -1,7 +1,7 @@
 // src/components/Navbar.tsx
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import "./Navbar.css";
+import "./styles/Navbar.css";
 import logoIcon from './images/logo_edited.png';
 
 export const Navbar = () => {
