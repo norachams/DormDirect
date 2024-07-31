@@ -1,7 +1,7 @@
 // src/components/Home.tsx
 import React from 'react';
-import "./styles/HomeBlock2.css";
-import campusStudents from "./images/campusStudents.png"
+import '../../../styles/HomeBlock2.css';
+import campusStudents from "../../../images/campusStudents.png"
 import { MdArrowRightAlt } from "react-icons/md";
 import CheckMarkItem from '../../CheckMarkItem';
 

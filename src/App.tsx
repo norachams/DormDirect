@@ -2,10 +2,10 @@ import React from 'react';
 
 import './App.css';
 import { Navbar } from './components/Navbar';
-import { Home, About, Login } from './components/pages'
+import { Home, About } from './components/pages'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './Pages/login';
+import Login from './components/pages/Login';
 
 import './styles/tailwind.css'; // Add this line
 

@@ -1,8 +1,10 @@
 // src/components/Navbar.tsx
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import "./Navbar.css";
-import logoIcon from './images/logo.png';
+import '../styles/Navbar.css';
+import logoIcon from '../images/logo.png';
+
+
 
 export const Navbar = () => {
   return (

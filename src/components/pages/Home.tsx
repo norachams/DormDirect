@@ -1,6 +1,6 @@
 // src/components/Home.tsx
 import React from 'react';
-import "./styles/Home.css";
+import '../../styles/Home.css';
 import HomeBlock1 from './homeSections/HomeBlock1';
 import HomeBlock2 from './homeSections/HomeBlock2';
 import HomeBlock3 from './homeSections/HomeBlock3';
