@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../styles/Navbar.css';
-import logoIcon from '../images/logo.png';
+import logoIcon from '../images/logo_edited.png';
 
 
 
@@ -14,7 +14,7 @@ export const Navbar = () => {
       </div>
       <ul>
       <li><NavLink to={"/about"}>About</NavLink></li>
-      <li><NavLink to={"/listings"}>Listings</NavLink></li>
+      <li><NavLink to={"/login"}>Login</NavLink></li>
       </ul>
     </nav>
   );

@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('../images/HomePageBackground.png'); /* Set the background image */
+  background-image: url("../images/HomePageBackground.png"); /* Set the background image */
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Avoid repeating the background image */
@@ -104,8 +104,8 @@ svg {
   }
 
   #main-text-2 {
-     font-size: clamp(1rem, 10vw, 1.75rem);
-   }
+    font-size: clamp(1rem, 10vw, 1.75rem);
+  }
 }
 @media screen and (max-width: 851px) {
   input {

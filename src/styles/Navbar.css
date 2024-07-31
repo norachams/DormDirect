@@ -2,7 +2,7 @@
 nav {
      position: fixed; /* Fix the navbar at the top */
      top: 0;
-     width: 95%; /* Full width */
+     width: 97.7%; /* Full width */
      background-color: white;
      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
      display: flex;
@@ -21,7 +21,12 @@ nav {
    }
    
    #logo-navbar {
-     width: 300px; /* Adjust size as needed */
+     width: 200px; /* Adjust size as needed */
+     display: flex;
+   }
+   
+   #logo-navbar:hover {
+    opacity: 0.8;
    }
    
    .title {
@@ -53,9 +58,8 @@ nav {
      border-radius: 5px;
    }
    
-   ul li a:hover, ul li a.active {
-     background-color: rgb(108, 108, 108);
-     color: white;
+   ul li a:hover {
+     background-color: #E7C873;
    }
    
 /* Navbar styles for screens with a maximum width of 464px */

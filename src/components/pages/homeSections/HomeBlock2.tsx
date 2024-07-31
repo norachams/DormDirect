@@ -17,9 +17,6 @@ export const HomeBlock2: React.FC = () => {
                          <p id='sub-text'>In a Saturated Housing Market - Choose Us for the Best Student Rentals</p>
                     </div>
                     <div className='bottom-group'>
-
-
-                         
                          <div className='left-group'>
                               <CheckMarkItem text='100% Secure and Student Verified' />
                               <CheckMarkItem text='Rent or Sublease Room' />
@@ -29,10 +26,12 @@ export const HomeBlock2: React.FC = () => {
                               <CheckMarkItem text='Trusted By Students and Landlords' />
                          </div>
                     </div>
+                    <a href='/about'>
                     <button className='learn-more-button'>
-                         <span>Learn More</span>
+                         Learn More
                          <MdArrowRightAlt />
                     </button>
+                    </a>
                </div>
           </div>
      );

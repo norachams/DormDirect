@@ -1,14 +1,13 @@
 /* src/styles/Home.css */
 .container2 {
      display: flex;
-     justify-content: space-between; /* Aligns left and right sections */
+     justify-content: space-evenly; /* Aligns left and right sections */
      height: 100vh auto; /* Use full viewport height */
      overflow-y: auto; /* Enable vertical scrolling */
      text-align: center;
      flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
    }
    
-   .left-section,
    .right-section {
      display: flex;
      flex-direction: column;
@@ -17,6 +16,15 @@
      padding: 20px;
      justify-content: center;
    }
+
+   .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+  }
+  
    
    /* Top group styling */
    .top-group {
@@ -24,7 +32,7 @@
      display: flex;
      flex-direction: column;
      gap: 5px;
-     align-items: flex-start; /* Align text to the left */
+     align-items: left; /* Align text to the left */
      width: 90%; /* Ensure the top-group takes full width */
    }
    
@@ -54,6 +62,7 @@
    #page-2-title {
      font-size: 2rem;
      font-weight: 600;
+     margin: 0;
    }
    
    /* Section styling */
@@ -87,6 +96,10 @@
    
    #small-text {
      font-size: 13px;
+   }
+
+   #campus-picture {
+    border-radius: 20px;
    }
    
    /* Responsive Styles */

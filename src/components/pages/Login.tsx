@@ -25,12 +25,12 @@ const Login = () => {
 
   return (
     <div className="page-container">
-      <img id='logo-navbar' src={logo} alt='Logo' className='logo'/>
+      <a href='/home'><img id='logo-navbar' src={logo} alt='Logo' className='logo'/></a>
       <div className="login-box">
         <h2 className="login-heading">
           Join the Dorm Direct Family!
         </h2>
-        <form>
+        <form className='inner-login-box'>
           <input type="text" placeholder="Name" className="input-field" />
           <input type="email" placeholder="Email address" className="input-field" />
           <input type="password" placeholder="Password" className="input-field" />
@@ -38,7 +38,7 @@ const Login = () => {
             <input type="checkbox" id="terms" />
             <label htmlFor="terms"> I agree to the <a href="#">terms & policy</a></label>
           </div>
-          <button type="submit" className="signup-button">Signup</button>
+          <button type="submit" className="signup-button">Sign up</button>
         </form>
         <div className="google-login">
           <GoogleLogin

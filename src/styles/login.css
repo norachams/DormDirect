@@ -2,10 +2,11 @@
 
 .page-container {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f7fafc; /* Tailwind's bg-gray-100 */
+    background-color: #ebe9d5; /* Tailwind's bg-gray-100 */
     flex-direction: column;
   }
   
@@ -37,7 +38,7 @@
   }
   
   .signup-button {
-    background-color: #d4af37; /* Custom gold color */
+    background-color: #E7C873;
     color: #ffffff;
     padding: 0.75rem 1.5rem; /* Tailwind's py-3 px-6 */
     border: none;
@@ -50,14 +51,17 @@
   }
   
   .signup-button:hover {
-    background-color: #b78d2a; /* Slightly darker gold for hover effect */
+    background-color: #e1c067; /* Slightly darker gold for hover effect */
   }
   
   .input-field {
-    width: 100%;
+    width: 90%;
     padding: 0.5rem; /* Tailwind's p-2 */
     margin-bottom: 1rem; /* Tailwind's mb-4 */
     border: 1px solid #ddd; /* Light border */
     border-radius: 0.25rem; /* Tailwind's rounded */
   }
   
+  .mt-4 {
+    margin-top: 15px;
+  }
