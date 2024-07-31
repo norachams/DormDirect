@@ -6,6 +6,8 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
+listingInformation = []
+
 @app.route('/')
 def home():
     return "Welcome to DormDirect"
@@ -13,15 +15,23 @@ def home():
 
 @app.route('/listings', methods=['GET'])
 def get_listings():
-    return scrapeFromKijiji()
+    
+    # reset listings array before refresh to avoid duplication
+    global listingInformation
+    listingInformation = []
+    
+    getListingsForEachUrl()
+    # listing Information array is now populated
+    
+    return jsonify(listingInformation)
 
  
-def scrapeFromKijiji():
-    url = 'https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/waterloo-student-housing/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096'  # Example URL, replace with the actual Kijiji URL
+def scrapeFromKijiji(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    listingInformation = []
+    global listingInformation
+    global listingCount
     
     listingsHTML = soup.find_all('li', attrs={"data-testid": True})
     
@@ -38,8 +48,20 @@ def scrapeFromKijiji():
         }
         
         listingInformation.append(listingEntry)
-        
-    return jsonify(listingInformation)
+    
+    return
+
+def getListingsForEachUrl():
+    urls = [
+        "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/kitchener-student-housing/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096",
+        "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/waterloo-student-housing/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096",
+        "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/waterloo-sublet/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096"
+    ]
+    
+    for url in urls:
+        scrapeFromKijiji(url)
+    
+    return
 
 
 def findListingInfo(listingData):
@@ -55,3 +77,13 @@ def findListingInfo(listingData):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+"""
+search listings => listingName = searchbar value
+
+max price =>  listingPrice < max price listbox value
+
+building type => if listing description **includes** building type (set false at beginning at break at keyword)
+
+"""

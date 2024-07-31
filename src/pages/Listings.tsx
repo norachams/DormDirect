@@ -13,6 +13,8 @@ interface Listing {
 const Listings: React.FC = () => {
   const [listings, setListings] = useState<Listing[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [searchInput, setSearchInput] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -32,6 +34,14 @@ const Listings: React.FC = () => {
     fetchListings();
   }, []);
 
+  const handleUpdatedSearch = () => {
+    setSearchTerm(searchInput);
+  }
+
+  const filteredListings = listings.filter(listing => 
+    listing.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className='listings-container'>
       <div className='heading-container'>
@@ -40,11 +50,16 @@ const Listings: React.FC = () => {
       </div>
       <div className='search-container'>
         <div className='bar-container'>
-          <input placeholder='Search Listings...' />
+          <input 
+            id="user-search" 
+            placeholder='Search Listings...' 
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
           <div className='listing-filters'>
             <div className='listbox'>
               <p>Duration</p>
-              <select name="duration">
+              <select id="duration-option" name="duration">
                 <option value="4-month">4-month</option>
                 <option value="8-month">8-month</option>
                 <option value="12-month">12-month</option>
@@ -52,7 +67,7 @@ const Listings: React.FC = () => {
             </div>
             <div className='listbox'>
               <p>Max Price</p>
-              <select name="max-price">
+              <select id="price-option" name="max-price">
                 <option value="price-500">$500</option>
                 <option value="price-1000">$1000</option>
                 <option value="price-1500">$1500</option>
@@ -61,21 +76,26 @@ const Listings: React.FC = () => {
             </div>
             <div className='listbox'>
               <p>Building Type</p>
-              <select name="building-type">
+              <select id="building-option" name="building-type">
                 <option value="apartment">Apartment</option>
                 <option value="house">House</option>
               </select>
             </div>
           </div>
-          <button id='search-listing-button'>Search</button>
+          <button 
+            id='search-listing-button'
+            onClick={handleUpdatedSearch}
+          >
+            Search
+          </button>
         </div>
       </div>
       {error && <p>Error: {error}</p>}
-      {listings.length === 0 ? (
+      {filteredListings.length === 0 ? (
         <p>Loading...</p>
       ) : (
         <ul className='all-listings-container'>
-          {listings.map((listing, index) => (
+          {filteredListings.map((listing, index) => (
             <li key={index} className='listing-item'>
               <h2>{listing.name}</h2>
               <a href={listing.link} target="_blank" rel="noopener noreferrer">View Listing</a>
