@@ -1,6 +1,6 @@
 // src/components/Home.tsx
 import React from 'react';
-import "./styles/HomeBlock3.css";
+import '../../../styles/HomeBlock3.css';
 import VerticalBlockItem from '../../VerticalBlockItem';
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
