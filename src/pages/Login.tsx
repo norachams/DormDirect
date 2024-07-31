@@ -34,7 +34,7 @@ const Login = () => {
               onError={handleGoogleLoginError}
             />
           </div>
-         
+
         </div>
       </div>
     </div>

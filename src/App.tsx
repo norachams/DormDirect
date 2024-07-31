@@ -10,20 +10,19 @@ import Listings from './pages/Listings';
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId=''>
-
-    
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/listings" element={<Listings />} />
-        </Routes>
-      </Router>
-    </div>
+    // TODO: Without the GoogleOAuthProvider tag, an error is displayed. Solution might be to use the clientID inside the single quotes.
+    <GoogleOAuthProvider clientId=''> 
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/listings" element={<Listings />} />
+          </Routes>
+        </Router>
+      </div>
     </GoogleOAuthProvider>
   );
 }

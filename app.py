@@ -56,7 +56,7 @@ def getListingsForEachUrl():
         "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/kitchener-student-housing/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096",
         "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/waterloo-student-housing/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096",
         "https://www.kijiji.ca/b-room-rental-roommate/kitchener-waterloo/waterloo-sublet/k0c36l1700212?radius=50.0&address=Waterloo%2C+ON&ll=43.4642578%2C-80.5204096"
-    ]
+    ] # 3 default urls to fetch from
     
     for url in urls:
         scrapeFromKijiji(url)
@@ -80,10 +80,12 @@ if __name__ == '__main__':
 
 
 """
+TODO: price, building type, and length of lease filters don't work yet
+! Below is the logic for implementing them based on each listing's info:
+
 search listings => listingName = searchbar value
 
 max price =>  listingPrice < max price listbox value
 
 building type => if listing description **includes** building type (set false at beginning at break at keyword)
-
 """

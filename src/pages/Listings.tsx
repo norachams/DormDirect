@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./styles/Listings.css";
 
+// all the information we are fetching for a listing
 interface Listing {
   name: string;
   link: string;
@@ -11,35 +12,45 @@ interface Listing {
 }
 
 const Listings: React.FC = () => {
+
+  // get states for listings, the text currently in the search bar, and the final searched item
   const [listings, setListings] = useState<Listing[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [searchInput, setSearchInput] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState<string>('');
 
+  // get listings from the backend API
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/listings');
+        const apiServer = 'http://127.0.0.1:5000/listings'; // listings are waiting on port 5000/listings
+        const response = await fetch(apiServer);
+
+        // no response => http error
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          throw new Error(`HTTP Error. Status: ${response.status}`);
         }
+
+        // get the data in json format
         const data = await response.json();
+
+        // update state for current listings
         setListings(data);
       } catch (error) {
         console.error('Error fetching listings:', error);
         setError('Error fetching listings.');
       }
     };
-
     fetchListings();
   }, []);
 
+  // search through listings for the listing name in the search bar
   const handleUpdatedSearch = () => {
     setSearchTerm(searchInput);
   }
 
-  const filteredListings = listings.filter(listing => 
-    listing.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredListings = listings.filter(listing =>
+    listing.name.toLowerCase().includes(searchTerm.toLowerCase()) // convert listing titles to lowercase for comparison
   );
 
   return (
@@ -50,9 +61,9 @@ const Listings: React.FC = () => {
       </div>
       <div className='search-container'>
         <div className='bar-container'>
-          <input 
-            id="user-search" 
-            placeholder='Search Listings...' 
+          <input
+            id="user-search"
+            placeholder='Search Listings...'
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
@@ -82,16 +93,16 @@ const Listings: React.FC = () => {
               </select>
             </div>
           </div>
-          <button 
+          <button
             id='search-listing-button'
-            onClick={handleUpdatedSearch}
-          >
+            onClick={handleUpdatedSearch}>
             Search
           </button>
         </div>
       </div>
+
       {error && <p>Error: {error}</p>}
-      {filteredListings.length === 0 ? (
+      {filteredListings.length === 0 ? ( // ensure there are listings to display, otherwise api might be still trying to fetch them (show "loading.." if that's the case)
         <p>Loading...</p>
       ) : (
         <ul className='all-listings-container'>
