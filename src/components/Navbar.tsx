@@ -10,11 +10,11 @@ export const Navbar = () => {
   return (
     <nav>
       <div className='navbar-left'>
-        <img id='logo-navbar' src={logoIcon} alt='Logo' />
+      <NavLink to={"/home"}><img id='logo-navbar' src={logoIcon} alt='Logo' /></NavLink>
       </div>
       <ul>
-        <li>About</li>
-        <li>Login</li>
+      <li><NavLink to={"/about"}>About</NavLink></li>
+      <li><NavLink to={"/listings"}>Listings</NavLink></li>
       </ul>
     </nav>
   );

@@ -2,7 +2,7 @@
 nav {
      position: fixed; /* Fix the navbar at the top */
      top: 0;
-     width: 100%; /* Full width */
+     width: 95%; /* Full width */
      background-color: white;
      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
      display: flex;
@@ -54,7 +54,7 @@ nav {
    }
    
    ul li a:hover, ul li a.active {
-     background-color: rgb(251, 153, 115);
+     background-color: rgb(108, 108, 108);
      color: white;
    }
    
