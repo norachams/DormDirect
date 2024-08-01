@@ -9,10 +9,10 @@ nav {
      justify-content: space-between; /* Space out the logo/title and nav items */
      align-items: center;
      padding: 0 20px; /* Padding on left and right */
-     height: 60px; /* Fixed height */
+     height: 70px; /* Fixed height */
      z-index: 1000; /* Ensure it stays above other content */
-     margin-top: 20px;
-     border-radius: 30px;
+   
+    
    }
    
    .navbar-left {
