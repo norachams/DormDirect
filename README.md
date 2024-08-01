@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+![image](https://github.com/user-attachments/assets/ac37bc4a-103b-44f5-88dd-aba6976f4c1a)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Are You a University Student Looking for housing in Waterloo? Are You Tired of All the Time It Takes to Scour Multiple Listing Sites for Housing Postings? Well DormDirect is Your Solution! Sign-Up Today, Free-of Charge._
 
-## Available Scripts
+## 🎥 Demo
+https://github.com/user-attachments/assets/92f7dc4f-5342-4f1a-9a60-55666efd683a
 
-In the project directory, you can run:
+## 💡 Inspiration
+Navigating between schoolwork, tuition fees, and internships is already difficult enough for university students. Looking for housing becomes strenuous, especially between work and school terms. That's why we built DormDirect to streamline the process of finding listings for university students in Waterloo. All of us are Co-op students which means we're constantly looking for housing between work terms and we thought to build a platform that will help us do this. 
 
-### `npm start`
+## 🛠️ What it does
+DormDirect uses a BeautifulSoup Web Scrapper to scrape listings from 3 popular listing searches on Kijiji (1 => "Student housing waterloo", 2 => "Wilfrid Laurier University housing", 3 => "University of Waterloo housing"). Once the listings are scrapped, they are contained within a Flask backend that Jsonifies the fetched listing information and makes it available at an API endpoint. The React frontend  retrieves the jsonified listing content from the endpoint and displays it in a clean way.      
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🧰 How we built it
+As mentioned we used ```React```, ```Flask```, ```BeautifulSoup```, ```css/tailwind.css```, and ```Firebase``` for user authentication.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔮 What's next?
+- Incorporating listings from **Facebook MarketPlace**, **Bamboo Housing**, and **Airbnb** to create one centralized location for students to find listings on.
+- Making the search filters functional 
