@@ -57,30 +57,28 @@ const Listings: React.FC = () => {
     setSearchTerm(searchInput);
   }
 
-  const filteredListings = listings.filter(listing => {
-    // see if there is a match in the listing name
-    const nameMatches = listing.name.toLowerCase().includes(searchTerm.toLowerCase());
 
-    // no max price filter or the listing price is non-numeric => compare only the listing name for a match
-    if ((maxPrice === "None" || listing.price.toLowerCase() === "please contact")) {
-      return nameMatches;
+  const filteredListings = listings.filter(listing => {
+    const nameMatches = listing.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const buildingTypeMatches = buildingType === 'All' || listing.description.toLowerCase().includes(buildingType.toLowerCase());
+    const durationMatches = duration === 'All' || listing.description.toLowerCase().includes(duration.toLowerCase());
+    
+    let cleanedPrice = null;
+    if (listing.price.toLowerCase() !== "please contact") {
+      cleanedPrice = Number(listing.price.slice(1).replace(",", ""));
     }
 
-    const buildingTypeMatches = listing.description.toLowerCase().includes(buildingType.toLowerCase());
-    const durationMatches = listing.description.toLowerCase().includes(duration.toLowerCase());
+    if (maxPrice !== "None" && cleanedPrice !== null) {
+      return nameMatches && cleanedPrice <= Number(maxPrice) && buildingTypeMatches && durationMatches;
+    }
 
-    // there is a max price filter
-
-    // remove formatting from listing price for comparison with max price
-    const cleanedPrice = listing.price.slice(1, listing.price.length - 3).replace(",", "");
-
-    if (!buildingTypeMatches || !durationMatches) {
-      return nameMatches && (Number(cleanedPrice) <= Number(maxPrice));
-    } 
-
-    return nameMatches && (Number(cleanedPrice) <= Number(maxPrice)) && buildingTypeMatches && durationMatches;
+    if (maxPrice === "None") {
+      return nameMatches && buildingTypeMatches && durationMatches;
+    }
+    
+    return nameMatches;
   });
-
+  
   return (
     <div className='listings-container'>
       <Navbar />
