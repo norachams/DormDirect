@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div className="page-container">
-      <a href='/home'><img id='logo-navbar' src={logo} alt='Logo' className='logo'/></a>
+      <a href='/'><img id='logo-navbar' src={logo} alt='Logo' className='logo'/></a>
       <div className="login-box">
         <h2 className="login-heading">
           Join the Dorm Direct Family!

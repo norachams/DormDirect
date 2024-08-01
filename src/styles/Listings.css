@@ -12,7 +12,6 @@
     overflow-y: auto; /* Enable vertical scrolling */
     text-align: center;
     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
-    background-color: #ebe9d5;
   }
   
   .heading-container {
@@ -110,14 +109,14 @@
   
   .listing-item {
     background-color: white;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 10px;
     width: 27%;
     padding: 20px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     text-align: left;
   }
   
@@ -130,6 +129,46 @@
     height: auto;
     border-radius: 10px;
   }
+
+  #listing-name {
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+  }
+  
+  #listing-price {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  #listing-location {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+ 
+  #visit-listing-button {
+    background-color: #3095b4;
+    margin: 10px 10px;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 0;
+    cursor: pointer;
+    width: 30%;
+    transition: transform 0.2s ease; /* Increase duration to 0.6 seconds */
+  }
+  
+  #visit-listing-button a{
+    color: white;
+    font-size: 0.8rem;
+  }
+
+  #visit-listing-button:hover {
+    transform: translateY(-5px); /* Use translateY for smoother vertical movement */
+    opacity: 0.98;
+  }
+
   
   /* Styles for stacking buttons vertically when viewport width is 1200px or less */
   @media screen and (max-width: 1130px) {
