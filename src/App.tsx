@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/pages/Login';
 import Listings from './components/Listings';
 
-import './styles/tailwind.css'; // Add this line
+import './styles/tailwind.css';
 
 
 
@@ -17,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/listings" element={<Listings />} />
       </Routes>
     </Router>
