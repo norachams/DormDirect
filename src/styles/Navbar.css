@@ -58,7 +58,7 @@ nav {
      border-radius: 5px;
    }
    
-   ul li a:hover {
+   nav ul li a:hover {
      background-color: #E7C873;
    }
    

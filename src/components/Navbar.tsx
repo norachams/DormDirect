@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <nav>
       <div className='navbar-left'>
-      <NavLink to={"/home"}><img id='logo-navbar' src={logoIcon} alt='Logo' /></NavLink>
+      <NavLink to={"/"}><img id='logo-navbar' src={logoIcon} alt='Logo' /></NavLink>
       </div>
       <ul>
       <li><NavLink to={"/about"}>About</NavLink></li>

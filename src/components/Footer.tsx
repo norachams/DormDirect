@@ -9,7 +9,7 @@ export const Footer = () => {
                <div className='footer-container'>
                     {/* Column1 */}
                     <div className='col'>
-                         <a href='/home'><img id='logo-icon' src={Logo}/></a>
+                         <a href='/'><img id='logo-icon' src={Logo}/></a>
                     </div>
                     {/* Column2 */}
                     <div className='col'>
