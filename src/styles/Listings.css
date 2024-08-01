@@ -12,7 +12,6 @@
     overflow-y: auto; /* Enable vertical scrolling */
     text-align: center;
     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
-    /*TODO: removed background colour */
   }
   
   .heading-container {

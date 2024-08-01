@@ -25,7 +25,7 @@ const Listings: React.FC = () => {
   const [maxPrice, setMaxPrice] = useState<string>('None');
   const [buildingType, setBuildingType] = useState<string>('All');
   const [duration, setDuration] = useState<string>('All');
-  
+
 
   // get listings from the backend API
   useEffect(() => {
@@ -60,7 +60,7 @@ const Listings: React.FC = () => {
   const filteredListings = listings.filter(listing => {
     // see if there is a match in the listing name
     const nameMatches = listing.name.toLowerCase().includes(searchTerm.toLowerCase());
-  
+
     // no max price filter or the listing price is non-numeric => compare only the listing name for a match
     if ((maxPrice === "None" || listing.price.toLowerCase() === "please contact")) {
       return nameMatches;
@@ -68,18 +68,22 @@ const Listings: React.FC = () => {
 
     const buildingTypeMatches = listing.description.toLowerCase().includes(buildingType.toLowerCase());
     const durationMatches = listing.description.toLowerCase().includes(duration.toLowerCase());
-    
+
     // there is a max price filter
-    
+
     // remove formatting from listing price for comparison with max price
-    const cleanedPrice = listing.price.slice(1,listing.price.length-3).replace(",","");
-    
+    const cleanedPrice = listing.price.slice(1, listing.price.length - 3).replace(",", "");
+
+    if (!buildingTypeMatches || !durationMatches) {
+      return nameMatches && (Number(cleanedPrice) <= Number(maxPrice));
+    } 
+
     return nameMatches && (Number(cleanedPrice) <= Number(maxPrice)) && buildingTypeMatches && durationMatches;
   });
 
   return (
     <div className='listings-container'>
-        <Navbar />
+      <Navbar />
       <div className='heading-container'>
         <h1 id='listing-page-title'>Search Featured Properties</h1>
         <p id='listing-page-subtitle'>Find the Perfect Place for You!</p>
@@ -95,8 +99,8 @@ const Listings: React.FC = () => {
           <div className='listing-filters'>
             <div className='listbox'>
               <p>Duration</p>
-              <select 
-                id="duration-option" 
+              <select
+                id="duration-option"
                 name="duration"
                 onChange={(e) => setDuration(e.target.value)}>
                 <option value="All">All</option>
@@ -107,8 +111,8 @@ const Listings: React.FC = () => {
             </div>
             <div className='listbox'>
               <p>Max Price</p>
-              <select 
-                id="price-option" 
+              <select
+                id="price-option"
                 name="max-price"
                 onChange={(e) => setMaxPrice(e.target.value)}>
                 <option value="None">None</option>
@@ -120,7 +124,7 @@ const Listings: React.FC = () => {
             </div>
             <div className='listbox'>
               <p>Building Type</p>
-              <select 
+              <select
                 id="building-option"
                 name="building-type"
                 onChange={(e) => setBuildingType(e.target.value)}>
@@ -142,7 +146,7 @@ const Listings: React.FC = () => {
       {filteredListings.length === 0 ? ( // ensure there are listings to display, otherwise api might be still trying to fetch them (show "loading.." if that's the case)
         <div>
           <p>Hmm no listing was found that satisfies the searched criteria. Try again?</p>
-          <img src={noResultFound}/>
+          <img src={noResultFound} />
         </div>
       ) : (
         <ul className='all-listings-container'>
