@@ -2,18 +2,21 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin, CredentialResponse } from '@react-oauth/google';
 import { auth, GoogleAuthProvider, signInWithPopup } from '../../firebaseConfig';
-import '../../styles/login.css'; // Import the CSS file
+import '../../styles/login.css'; 
 import logo from '../../images/logo_edited.png';
+import { useAuth } from '../../AuthContext';
 
 
 const Login = () => {
   const navigate = useNavigate();
+  const { toggleAuth } = useAuth();
 
   const handleGoogleLoginSuccess = async (credentialResponse: CredentialResponse) => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
       console.log(result.user);
+      toggleAuth();
       navigate('/listings');
     } catch (error) {
       console.error('Error during Google sign-in:', error);
