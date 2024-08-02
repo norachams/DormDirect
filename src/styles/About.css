@@ -1,6 +1,5 @@
-/* General container for the about page */
 .about-container {
-  background-color: #204b43; /* Light background color for the page */
+  background-color: #204b43; 
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
@@ -8,7 +7,6 @@
   margin-top: 60px;
 }
 
-/* Hero section that includes text and image */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -17,7 +15,7 @@
   max-width: 1200px;
   margin-bottom: 40px;
   padding: 20px;
-  background-color: #204b43; /* Dark green background color */
+  background-color: #204b43;
 }
 
 @media (min-width: 768px) {
@@ -27,10 +25,9 @@
   }
 }
 
-/* Text container with title and paragraphs */
 .content-container {
   flex: 1;
-  color: #ffffff; /* White text color for contrast */
+  color: #ffffff; 
   margin-right: 20px;
   text-align: center;
 }
@@ -41,7 +38,6 @@
   }
 }
 
-/* Title style for the hero section */
 .hero-title {
   font-size: 2rem;
   font-weight: bold;
@@ -54,17 +50,15 @@
   }
 }
 
-/* Paragraph text style */
 .hero-text {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* Button style */
 .learn-more-button {
-  background-color: #fbcf60; /* Gold color */
-  color: #1b2e3a; /* Dark text color for contrast */
+  background-color: #fbcf60; 
+  color: #1b2e3a; 
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 5px;
@@ -78,7 +72,6 @@
   background-color: #e8b950;
 }
 
-/* Image container for the hero image */
 .image-container {
   flex: 1;
   margin-top: 20px;
@@ -93,7 +86,6 @@
   }
 }
 
-/* Hero image style */
 #about-logo {
   width: 100%;
   max-width: 400px;
@@ -102,13 +94,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Stats section styles */
 .stats-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  background-color: #204b43; /* White background for contrast */
+  background-color: #204b43;
   padding: 30px 0;
   border-radius: 10px;
 }
@@ -126,18 +117,18 @@
   color: #efe2be;
 }
 #kijiji {
-  height: 40px; /* Set height to make the logo smaller */
+  height: 40px; 
   margin-bottom: 10px;
 }
 
 .stat-number {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #E7C873; /* Dark text color for emphasis */
+  color: #E7C873; 
   margin-bottom: 5px;
 }
 
 .stat-text {
   font-size: 0.9rem;
-  color: #efe2be; /* Gray text color */
+  color: #efe2be; 
 }
