@@ -57,7 +57,6 @@ const Listings: React.FC = () => {
     setSearchTerm(searchInput);
   }
 
-
   const filteredListings = listings.filter(listing => {
     const nameMatches = listing.name.toLowerCase().includes(searchTerm.toLowerCase());
     const buildingTypeMatches = buildingType === 'All' || listing.description.toLowerCase().includes(buildingType.toLowerCase());
