@@ -164,9 +164,9 @@ const Listings: React.FC = () => {
               <h2 id='listing-name'>{listing.name}</h2>
               <p id='listing-price'>{listing.price}</p>
               <p id='listing-location'>{listing.location}</p>
+              <img id="listing-image" src={listing.image} alt={listing.name} />
               <p>{listing.description}</p>
               <button id='visit-listing-button'><a href={listing.link} target="_blank" rel="noopener noreferrer">View Listing</a></button>
-              <img id="listing-image" src={listing.image} alt={listing.name} />
             </li>
           ))}
         </ul>
