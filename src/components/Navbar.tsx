@@ -14,8 +14,8 @@ export const Navbar = () => {
       <NavLink to={"/"}><img id='logo-navbar' src={logoIcon} alt='Logo' /></NavLink>
       </div>
       <ul>
-      {isAuthenticated && <li><NavLink to={"/listings"}>Browse Listings</NavLink></li>}
       <li><NavLink to={"/about"}>About</NavLink></li>
+      {isAuthenticated && <li><NavLink to={"/listings"}>Browse Listings</NavLink></li>}
       <li><NavLink to={"/login"}>{isAuthenticated ? 'Logout' : 'Login'}</NavLink></li>
       </ul>
     </nav>

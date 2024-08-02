@@ -12,6 +12,7 @@
     overflow-y: auto; /* Enable vertical scrolling */
     text-align: center;
     flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    background-color: #EBE9D5;
   }
   
   .heading-container {
@@ -34,12 +35,13 @@
     justify-content: center;
     background-color: white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    border-radius: 40px;
     width: 70%;
-    height: 13%;
-    margin: 20px auto; /* Center horizontally */
+    height: 10%;
+    margin: 20px auto; 
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
   }
   
   .bar-container {
@@ -125,29 +127,32 @@
   }
   
   .listing-item img {
-    width: 100%;
-    height: auto;
+    width: 200;
+    height: 320px;
     border-radius: 10px;
+    padding-bottom: 10px;
   }
 
   #listing-name {
-    font-size: 1.9rem;
+    font-size: 1.3rem;
     margin-bottom: 5px;
   }
   
   #listing-price {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-bottom: 5px;
+    color: rgb(8, 105, 1);
   }
   
   #listing-location {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 5px;
+    color: rgb(12, 66, 137);
   }
 
  
   #visit-listing-button {
-    background-color: #3095b4;
+    background-color: #e7c873;
     margin: 10px 10px;
     color: white;
     border: none;
@@ -155,12 +160,12 @@
     border-radius: 10px;
     margin-left: 0;
     cursor: pointer;
-    width: 40%;
+    width: 100%;
     transition: transform 0.2s ease; /* Increase duration to 0.6 seconds */
   }
   
   #visit-listing-button a{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 0.8rem;
   }
 
