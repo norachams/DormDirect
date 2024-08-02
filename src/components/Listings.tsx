@@ -21,6 +21,7 @@ const Listings: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [searchInput, setSearchInput] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
 
   const [maxPrice, setMaxPrice] = useState<string>('None');
   const [buildingType, setBuildingType] = useState<string>('All');
@@ -30,6 +31,8 @@ const Listings: React.FC = () => {
   // get listings from the backend API
   useEffect(() => {
     const fetchListings = async () => {
+      setLoading(true); 
+      setError(null);
       try {
         const apiServer = 'http://127.0.0.1:5000/listings'; // listings are waiting on port 5000/listings
         const response = await fetch(apiServer);
@@ -47,6 +50,8 @@ const Listings: React.FC = () => {
       } catch (error) {
         console.error('Error fetching listings:', error);
         setError('Error fetching listings.');
+      }  finally {
+        setLoading(false);
       }
     };
     fetchListings();
@@ -142,8 +147,12 @@ const Listings: React.FC = () => {
         </div>
       </div>
 
-      {error && <p>Error: {error}</p>}
-      {filteredListings.length === 0 ? ( // ensure there are listings to display, otherwise api might be still trying to fetch them (show "loading.." if that's the case)
+      {/* Conditional rendering for loading, error, and listings */}
+      {loading ? (
+        <p>Loading listings...</p> // Show loading message while fetching
+      ) : error ? (
+        <p>Error: {error}</p>
+      ) : filteredListings.length === 0 ? ( // ensure there are listings to display, otherwise api might be still trying to fetch them (show "loading.." if that's the case)
         <div>
           <p>Hmm no listing was found that satisfies the searched criteria. Try again?</p>
           <img src={noResultFound} />
